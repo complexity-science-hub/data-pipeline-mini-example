@@ -1,0 +1,17 @@
+---
+version: "3.9"
+services:
+  warehouse:
+    # docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres:14
+    image: postgres:15.4
+    container_name: warehouse
+    environment:
+      POSTGRES_DB: ${WAREHOUSE_POSTGRES_DB}
+      POSTGRES_USER: ${WAREHOUSE_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${WAREHOUSE_POSTGRES_PASSWORD}
+    profiles:
+      - warehouse
+    ports:
+      - "5432:5432"
+    volumes:
+     - ./z_tmp/postgres:/var/lib/postgresql/data

@@ -1,0 +1,21 @@
+# dbt debug --profiles-dir config
+dpme:
+  # target: dev
+  # ONLY enable in PROD. End users should use DEV
+  # https://dagster.slack.com/archives/C04CW71AGBW/p1671118160745799
+  # somehow DBT is confiusing the target and writing dev schema into JSON
+  target: dev
+  outputs:
+    prod:
+      type: postgres
+      host: localhost
+      user: "{{ env_var('WAREHOUSE_POSTGRES_USER') }}"
+      password: "{{ env_var('WAREHOUSE_POSTGRES_PASSWORD') }}"
+      port: 5432
+      threads: 2
+      dbname: "{{ env_var('WAREHOUSE_POSTGRES_DB') }}"
+      # replace and set to user`s profile schema
+      schema: public
+    dev:
+      type: duckdb
+      path: ../z_tmp/dbt.duckdb

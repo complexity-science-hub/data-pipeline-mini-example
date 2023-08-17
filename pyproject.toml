@@ -1,0 +1,23 @@
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+]
+ignore = ["E501"]
+line-length = 130
+select = [
+    "B",
+    "C",
+    "E",
+    "F",
+    "W",
+]
+
+[tool.ruff.mccabe]
+max-complexity = 5
+
