@@ -4,6 +4,7 @@ Serves as an introductory example towards DBT.
 
 It can be extended if needed with:
 
+- more in-depth introduction of DBT (jinja, macros, plugins)
 - using DBT with postgres
 - examples on how to apply
     - auto formatting
