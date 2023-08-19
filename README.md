@@ -2,17 +2,20 @@
 
 Serves as an introductory example towards DBT.
 
-It can be extended if needed with:
+It can be extended if desired with:
 
 - more in-depth introduction of DBT (jinja, macros, plugins)
 - using DBT with postgres
-- examples on how to apply
+- introduction to dagster with DBT
+    - https://dagster.io/blog/orchestrating-dbt-with-dagster
+    - https://dagster.io/blog/asset-based-scheduling
+    - https://docs.dagster.io/getting-started/hello-dagster
+- introduction to a more complex project (the CSH migration project)
+- examples on how to apply clean coding practices plus:
     - auto formatting
     - linting
     - testing
     - style checks for SQL
-- introduction to dagster with DBT
-- introduction to a more complex project (the migration project)
 
 ## prerequisites
 
@@ -80,11 +83,19 @@ Now look at the code in the models directory.
 
 It is all plain SQL - plus some enhancements
 
-### T2: (to follow as needed upon request)
+### T2: in depth discussion of advanced DBT features
 
-lets discuss about what is useful for you/this project
+- https://count.co/canvas/JpkaYdqr9oN (global overview)
+- https://docs.getdbt.com/docs/build/jinja-macros
+- What is https://duckdb.org? And what is different to another database such as Postgres
+    - duckDB and DBT https://github.com/jwills/dbt-duckdb
+    - https://motherduck.com/blog/duckdb-versus-pandas-versus-polars/
+- duckDB extensions
+    - https://duckdb.org/docs/extensions/overview
+    - https://duckdb.org/docs/extensions/spatial and https://github.com/duckdblabs/duckdb_spatial and https://duckdb.org/2023/04/28/spatial.html
+    - https://github.com/isaacbrodsky/h3-duckdb
 
-## content backup for future tutorials
+### T3: Adding postgres into the mix
 
 ```
 # ensure that the .env file with some variables is present and interpreted by your system to be used as environment variables
@@ -93,3 +104,7 @@ lets discuss about what is useful for you/this project
 make start
 # to start a postgres database on your computer
 ```
+
+### T4: (to follow as needed upon request)
+
+lets discuss about what is useful for you/this project
